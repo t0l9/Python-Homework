@@ -1,10 +1,22 @@
-a = int(input("Введите делимое: "))
-b = int(input("Введите делитель: "))
+from time import sleep
 
-def division(a, b):
-    if b != 0:
-        return a/b
-    else:
-        return "На ноль делить нельзя"
 
-print(division(a, b))
+class TrafficLight:
+    __color = ['красный', 'желтый', 'зеленый']
+
+    def running(self):
+        i = 0
+        while i < 3:
+            print(f'Светофор переключается \n '
+                  f'{TrafficLight.__color[i]}')
+            if i == 0:
+                sleep(7)
+            elif i == 1:
+                sleep(5)
+            elif i == 2:
+                sleep(3)
+            i += 1
+
+
+TrafficLight = TrafficLight()
+TrafficLight.running()

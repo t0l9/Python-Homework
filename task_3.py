@@ -1,10 +1,25 @@
-a = int(input(f"Введите число: "))
-b = int(input(f"Введите число: "))
-c = int(input(f"Введите число: "))
+class Worker:
 
-def my_func(a, b, c):
-    list = [a, b, c]
-    list.sort()
-    return list[-1] + list[-2]
+    def __init__(self, name, surname, position, wage, bonus):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self._income = {"wage": wage, "bonus": bonus}
 
-print(my_func(a,b,c))
+
+class Position(Worker):
+
+    def __init__(self, name, surname, position, wage, bonus):
+        super().__init__(name, surname, position, wage, bonus)
+
+    def get_full_name(self):
+        return self.name + ' ' + self.surname
+
+    def get_total_income(self):
+        return self._income.get('wage') + self._income.get('bonus')
+
+
+a = Position('Anatoliy', 'Kolyshkin', 'Marketing', 20000, 2000)
+print(a.get_full_name())
+print(a.position)
+print(a.get_total_income())
