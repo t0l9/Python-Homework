@@ -1,18 +1,38 @@
+class Stationary:
+    def __init__(self, title):
+        self.title = title
 
-x = int(input("Введите действительное положительное число: "))
-y = int(input("целое отрицательное число: "))
+    def draw(self):
+        return f'Запуск отрисовки {self.title}'
 
-def my_func(x,y):
-    return x ** y
 
-def my_func_1(x,y):
-    res = 1
-    for i in range(abs(x)):
-        res *= x
-    if y >= 0:
-        return res
-    else:
-        return 1 / res
+class Pen(Stationary):
+    def __init__(self, title):
+        super().__init__(title)
 
-print(my_func(x,y))
-print(my_func_1(x,y))
+    def draw(self):
+        return f'Запуск отрисовки {self.title}'
+
+
+class Pencil(Stationary):
+    def __init__(self, title):
+        super().__init__(title)
+
+    def draw(self):
+        return f'Запуск отрисовки {self.title}'
+
+
+class Handle(Stationary):
+    def __init__(self, title):
+        super().__init__(title)
+
+    def draw(self):
+        return f'Запуск отрисовки {self.title}'
+
+
+pen = Pen('Ручка')
+pencil = Pencil('Карандаш')
+handle = Handle('Маркер')
+print(pen.draw())
+print(pencil.draw())
+print(handle.draw())

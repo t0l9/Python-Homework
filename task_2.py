@@ -1,12 +1,17 @@
+class Road:
+    def __init__(self, _length, _width):
+        self._length = _length
+        self._width = _width
 
-name = input('Enter name: ').capitalize()
-surname = input('Enter surname: ').capitalize()
-year = int(input('Enter year: '))
-city = input('Enter city: ').capitalize()
-email = input('Enter email: ')
-telephone = int(input('Enput telephone: '))
+    def mass(self):
+        return self._length * self._width
 
-def get_parametrs(name, surname, year, city, email, telephone):
-    return ' '.join([name, surname, year, city, email, telephone])
 
-print(get_parametrs(surname, name, year, city, email, telephone)) 
+class MassCount(Road):
+    def __init__(self, _length, _width, volume):
+        super().__init__(_length, _width)
+        self.volume = volume
+
+
+r = MassCount(20, 5000, 125)
+print(r.mass())
