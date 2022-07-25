@@ -1,17 +1,4 @@
-class Road:
-    def __init__(self, _length, _width):
-        self._length = _length
-        self._width = _width
-
-    def mass(self):
-        return self._length * self._width
-
-
-class MassCount(Road):
-    def __init__(self, _length, _width, volume):
-        super().__init__(_length, _width)
-        self.volume = volume
-
-
-r = MassCount(20, 5000, 125)
-print(r.mass())
+my_list = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
+my_new_list = [el for num, el in enumerate(my_list) if my_list[num - 1] < my_list[num]]
+print(f'Исходный список {my_list}')
+print(f'Новый список {my_new_list}')
