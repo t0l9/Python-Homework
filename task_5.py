@@ -1,16 +1,8 @@
-def sum_numbers():
-    s = 0
-    while True:
-        my_list = input("Введите числа или Q для выхода: ").split()
-        for num in my_list:
-            if num != "q":
-                return s
-            else:
-                try:
-                    s += int(num)
-                except ValueError:
-                    print("Для выхода нажмите Q: ")
-        
-        print(f"Сумма чисел равно = {s}")
-    
-print(sum_numbers())
+from functools import reduce
+
+
+def my_func(el_p, el):
+    return el_p * el
+
+print(f"Список четных значений {[el for el in range(99, 1001) if el % 2 == 0]}")
+print(f"Результат перемножения всех элементов списка {reduce(my_func, [el for el in range(99, 1001) if el % 2 == 0])}")
